@@ -1,0 +1,183 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageUser.master.cs" Inherits="WebApplication1.MasterPageUser" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title></title>
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="CityCrowd" />
+    <meta property="og:description" content="The main idea of the CityCrowd is providing a platform to users to let them create and share events/gathering/activities/hanging outs with the other users with the same passion.
+To do so properly, Citycrowd is a social network with features such as following, exploring, searching, messaging, notification and so on.
+" />
+    <meta property="og:image" content="http://citycrowd.azurewebsites.net/Start/wp-content/uploads/2014/02/slider-11.jpg" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="nToastBG invisible">
+            <div class="nToast">
+                <div class="nToastSmilee">:(</div>
+                <div class="nToastMessage">I am the toast!</div>
+                <br />
+                <div class="nToastFooter">
+                    <div class="nToastFooterButton nToastFooterButtonlong invisible">Long</div>
+                    <div class="nToastFooterButton nToastFooterButtonShort1 invisible">short1 </div>
+                    <div class="nToastFooterButton nToastFooterButtonShort2 invisible">short2 </div>
+                </div>
+            </div>
+        </div>
+        <ul class="nAll">
+            <!-- side panel -->
+            <li class="nPanelLi" id="nMenuPanelLi">
+                <div class="nMenuContainer nMenuContainerUser invisible">
+                    <div class="nPanelBox nPanelBox1 nPanelBox1LoggedIn">
+                        <div class="nProfilePicture nPanelProfilePicture">
+                        </div>
+                        <div class="nName">
+                            <asp:Label ID="LabelFullName" runat="server"></asp:Label>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="nMenuBorderContainer">
+                        <div class="nPanelBox">
+                            <div class="nPanelSubBox" title="Messages">
+                                <div class="nEmailBut nPanelIcon"></div>
+                                <div class="nMenuNotification nMenuNotificationMessages">
+                                    <figure class="front">0</figure>
+                                    <figure class="back">0</figure>
+                                </div>
+                            </div>
+                            <div class="nPanelSubBox" title="Notifications">
+                                <div class="nNewEventBut nPanelIcon"></div>
+                                <div class="nMenuNotification nMenuNotificationNotifications">
+                                    <figure class="front">0</figure>
+                                    <figure class="back">0</figure>
+                                </div>
+                            </div>
+                            <div class="nPanelSubBox" title="Requests">
+                                <div class="nPersonBut nPanelIcon"></div>
+                                <div class="nMenuNotification nMenuNotificationRequests">
+                                    <figure class="front">0</figure>
+                                    <figure class="back">0</figure>
+                                </div>
+                            </div>
+                        </div>
+                        <section class="container invisible">
+                            <div id="card">
+                                <figure class="front invisible">1</figure>
+                                <figure class="back  invisible">2</figure>
+                            </div>
+                        </section>
+                        <div class="nPanelBox" data-menubutton="nearby">
+                            <div class="nFeedBut nPanelIconInside"></div>
+                            <div class="nPanelName">NEARBY</div>
+                        </div>
+                        <div class="nPanelBox" data-menubutton="following">
+                            <div class="nFollowingBut nPanelIconInside"></div>
+                            <div class="nPanelName">FOLLOWING</div>
+                        </div>
+                        <div class="nPanelBox" data-menubutton="explore">
+                            <div class="nExploreBut nPanelIconInside"></div>
+                            <div class="nPanelName">EXPLORE</div>
+                        </div>
+                        <div class="nPanelBox" data-menubutton="events">
+                            <div class="nEventsBut nPanelIconInside"></div>
+                            <div class="nPanelName">
+                                EVENTS
+                            </div>
+                        </div>
+                        <div class="nPanelBox" data-menubutton="review">
+                            <div class="nReviewBut nPanelIconInside"></div>
+                            <div class="nPanelName">
+                                REVIEW
+                            </div>
+                        </div>
+                        <div class="nPanelBox" data-menubutton="search">
+                            <div class="nSearchBut nPanelIconInside"></div>
+                            <div class="nPanelName">SEARCH</div>
+                        </div>
+                        <!-- <div class="nPanelBox">
+                    <div class="nCalendarBut nPanelIconInside"></div>
+                    <div class="nPanelName">CALENDAR</div>
+                </div>
+                    -->
+                        <div class="nPanelBox" data-menubutton="settings">
+                            <div class="nSettingsBut nPanelIconInside"></div>
+                            <div class="nPanelName">SETTINGS</div>
+                        </div>
+                        <div class="nPanelBox logoutPanel logoutPanelBottom">
+                            <div class="nPanelBox">
+                                <div class="nPanelSubBox nPanelSubBox4" data-menubutton="blog">
+                                    <div class="nBlogBut nPanelIcon"></div>
+                                    <!--<div class="nMenuNotification nMenuNotificationBlogs">1</div>-->
+                                    <br />
+                                    Blog
+                                </div>
+                                <div class="nPanelSubBox nPanelSubBox4" data-menubutton="invite">
+                                    <div class="nInviteBut nPanelIcon"></div>
+                                    <!--<div class="nMenuNotification nMenuNotificationBlogs">1</div>-->
+                                    <br />
+                                    Invite
+                                </div>
+                                <div class="nPanelSubBox nPanelSubBox4" data-menubutton="feedback">
+                                    <div class="nFeedbackBut nPanelIcon"></div>
+                                    <!--<div class="nMenuNotification nMenuNotificationRequests">1</div>-->
+                                    <br />
+                                    Feedback
+                                </div>
+                                <div class="nPanelSubBox nPanelSubBox4" data-menubutton="about">
+                                    <div class="nAboutBut nPanelIcon"></div>
+                                    <!--<div class="nMenuNotification nMenuNotificationNotifications invisible">1</div>
+                                -->
+                                    <br />
+                                    About
+                                </div>
+                            </div>
+                            <br />
+                            <div class="nLogoutInsidePanel">
+                                <div class="nLogoutBut nPanelIconInside"></div>
+                                <div class="nPanelName">LOGOUT</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nMenuContainer nMenuContainerGuest">
+                    <div class="nPanelBox nPanelBox1">
+                        <div class="nLoginLogo nMenuLogo"></div>
+                    </div>
+                    <div class="nPanelBox">
+                        <div class="nMenuLoginBut nPanelIconInside"></div>
+                        <div class="nPanelName">LOGIN</div>
+                    </div>
+                    <div class="nPanelBox">
+                        <div class="nMenuRegisterBut nPanelIconInside"></div>
+                        <div class="nPanelName">REGISTER</div>
+                    </div>
+                </div>
+                <!-- ATTENTION! There shouldn't be any white space between </li> and <li> -->
+            </li>
+            <li class="nPanelLi" id="nMainPanelLi">
+                <div class="nMainPanelDiv">
+                    <!--
+        <asp:HyperLink ID="HyperLinkProfile" runat="server" CssClass="profileLink ui-btn ui-btn-a ui-corner-all ui-icon-delete ui-btn-icon-right" NavigateUrl="~/Profile">Profile</asp:HyperLink>
+        <asp:HyperLink ID="HyperLinkSettings" runat="server" CssClass="ui-btn ui-btn-a ui-corner-all ui-icon-delete ui-btn-icon-right" NavigateUrl="~/Settings">Settings</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="ui-btn ui-btn-a ui-corner-all ui-icon-delete ui-btn-icon-right" NavigateUrl="~/Logout">Logout</asp:HyperLink>
+        -->
+                    <asp:HiddenField ID="HiddenFieldPhotoUrl" runat="server" />
+                    <asp:HiddenField ID="HiddenFieldMessages" runat="server" />
+                    <asp:HiddenField ID="HiddenFieldRequests" runat="server" />
+                    <asp:HiddenField ID="HiddenFieldNotifications" runat="server" />
+                    <asp:HiddenField ID="HiddenFieldUsername" runat="server" />
+                    <asp:HiddenField ID="HiddenFieldUserId" runat="server" />
+                    <asp:HiddenField ID="HiddenFieldLoginStatus" runat="server" />
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

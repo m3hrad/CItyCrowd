@@ -1,0 +1,1157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{75CF808E-978E-4A98-A0DB-DEB3233A9593}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Facebook.7.0.6\lib\net45\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\Users\Farhad\Desktop\ImageManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid.SmtpApi">
+      <HintPath>..\packages\SendGrid.SmtpApi.1.3.1\lib\net40\SendGrid.SmtpApi.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail">
+      <HintPath>..\packages\Sendgrid.6.1.0\lib\SendGridMail.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Admin.aspx" />
+    <Content Include="AdminPages\Admins.ascx" />
+    <Content Include="AdminPages\Blog.ascx" />
+    <Content Include="AdminPages\Events.ascx" />
+    <Content Include="AdminPages\Feedback.ascx" />
+    <Content Include="AdminPages\Locations.ascx" />
+    <Content Include="AdminPages\Settings.ascx" />
+    <Content Include="AdminPages\Statistics.ascx" />
+    <Content Include="AdminPages\Support.ascx" />
+    <Content Include="AdminPages\Users.ascx" />
+    <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="Blog.aspx" />
+    <Content Include="BlogEntries.aspx" />
+    <Content Include="Calendar.aspx" />
+    <Content Include="Completion.aspx" />
+    <Content Include="Done.aspx" />
+    <Content Include="EmailTemplates\Invite.txt" />
+    <Content Include="EmailTemplates\Register.txt" />
+    <Content Include="EmailTemplates\ForgotPassword.txt" />
+    <Content Include="Error.aspx" />
+    <Content Include="Events.aspx" />
+    <Content Include="EventsAdd.aspx" />
+    <Content Include="EventsModify.aspx" />
+    <Content Include="EventsView.aspx" />
+    <Content Include="Explore.aspx" />
+    <Content Include="facebooksync.aspx" />
+    <Content Include="FbFollow.aspx" />
+    <Content Include="Feedback.aspx" />
+    <Content Include="Files\ProfilesPhotos\file.txt" />
+    <Content Include="Files\Temp\file.txt" />
+    <Content Include="Following.aspx" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Help.aspx" />
+    <Content Include="Images\Admin\Buttons\accept-off.png" />
+    <Content Include="Images\Admin\Buttons\add-off - Copy.png" />
+    <Content Include="Images\Admin\Buttons\delete-off.png" />
+    <Content Include="Images\Admin\Buttons\edit-off.png" />
+    <Content Include="Images\Admin\Buttons\go-off.png" />
+    <Content Include="Images\Admin\Buttons\register-off.png" />
+    <Content Include="Images\Admin\Buttons\reject-off.png" />
+    <Content Include="Images\Admin\Buttons\save-off.png" />
+    <Content Include="Images\Admin\Buttons\send-off.png" />
+    <Content Include="Images\Admin\Permissions\adminsFalse.png" />
+    <Content Include="Images\Admin\Permissions\adminsTrue.png" />
+    <Content Include="Images\Admin\Permissions\blogFalse.png" />
+    <Content Include="Images\Admin\Permissions\blogTrue.png" />
+    <Content Include="Images\Admin\Permissions\contentFalse.png" />
+    <Content Include="Images\Admin\Permissions\contentTrue.png" />
+    <Content Include="Images\Admin\Permissions\locationsFalse.png" />
+    <Content Include="Images\Admin\Permissions\locationsTrue.png" />
+    <Content Include="Images\Admin\Permissions\reportsFalse.png" />
+    <Content Include="Images\Admin\Permissions\reportsTrue.png" />
+    <Content Include="Images\Admin\Permissions\settingsFalse.png" />
+    <Content Include="Images\Admin\Permissions\settingsTrue.png" />
+    <Content Include="Images\Admin\Permissions\statsFalse.png" />
+    <Content Include="Images\Admin\Permissions\statsTrue.png" />
+    <Content Include="Images\Admin\Permissions\status0.png" />
+    <Content Include="Images\Admin\Permissions\status1.png" />
+    <Content Include="Images\Admin\Permissions\supportFalse.png" />
+    <Content Include="Images\Admin\Permissions\supportTrue.png" />
+    <Content Include="Images\Admin\Permissions\usersFalse.png" />
+    <Content Include="Images\Admin\Permissions\usersTrue.png" />
+    <Content Include="Images\Blue.png" />
+    <Content Include="Images\BlueDecoration.png" />
+    <Content Include="Images\Covers\101.jpg" />
+    <Content Include="Images\Covers\102.jpg" />
+    <Content Include="Images\Covers\103.jpg" />
+    <Content Include="Images\Covers\104.jpg" />
+    <Content Include="Images\Covers\201.jpg" />
+    <Content Include="Images\Covers\202.jpg" />
+    <Content Include="Images\Covers\203.jpg" />
+    <Content Include="Images\Covers\301.jpg" />
+    <Content Include="Images\Covers\302.jpg" />
+    <Content Include="Images\Covers\303.jpg" />
+    <Content Include="Images\Covers\304.jpg" />
+    <Content Include="Images\Covers\401.jpg" />
+    <Content Include="Images\Covers\402.jpg" />
+    <Content Include="Images\Covers\403.jpg" />
+    <Content Include="Images\Covers\404.jpg" />
+    <Content Include="Images\Covers\405.jpg" />
+    <Content Include="Images\Covers\406.jpg" />
+    <Content Include="Images\Covers\501.jpg" />
+    <Content Include="Images\Covers\502.jpg" />
+    <Content Include="Images\Covers\503.jpg" />
+    <Content Include="Images\Covers\504.jpg" />
+    <Content Include="Images\Covers\505.jpg" />
+    <Content Include="Images\Covers\506.jpg" />
+    <Content Include="Images\Covers\601.jpg" />
+    <Content Include="Images\Covers\701.jpg" />
+    <Content Include="Images\Covers\702.jpg" />
+    <Content Include="Images\Covers\703.jpg" />
+    <Content Include="Images\Covers\704.jpg" />
+    <Content Include="Images\Covers\705.jpg" />
+    <Content Include="Images\Covers\706.jpg" />
+    <Content Include="Images\Covers\707.jpg" />
+    <Content Include="Images\Covers\708.jpg" />
+    <Content Include="Images\Covers\709.jpg" />
+    <Content Include="Images\Covers\710.jpg" />
+    <Content Include="Images\Covers\711.jpg" />
+    <Content Include="Images\Covers\801.jpg" />
+    <Content Include="Images\Covers\802.jpg" />
+    <Content Include="Images\Covers\803.jpg" />
+    <Content Include="Images\Covers\Thumbs\101.png" />
+    <Content Include="Images\Covers\Thumbs\102.png" />
+    <Content Include="Images\Covers\Thumbs\103.png" />
+    <Content Include="Images\Covers\Thumbs\104.png" />
+    <Content Include="Images\Covers\Thumbs\201.png" />
+    <Content Include="Images\Covers\Thumbs\202.png" />
+    <Content Include="Images\Covers\Thumbs\203.png" />
+    <Content Include="Images\Covers\Thumbs\301.png" />
+    <Content Include="Images\Covers\Thumbs\302.png" />
+    <Content Include="Images\Covers\Thumbs\303.png" />
+    <Content Include="Images\Covers\Thumbs\304.png" />
+    <Content Include="Images\Covers\Thumbs\401.png" />
+    <Content Include="Images\Covers\Thumbs\402.png" />
+    <Content Include="Images\Covers\Thumbs\403.png" />
+    <Content Include="Images\Covers\Thumbs\404.png" />
+    <Content Include="Images\Covers\Thumbs\405.png" />
+    <Content Include="Images\Covers\Thumbs\406.png" />
+    <Content Include="Images\Covers\Thumbs\501.png" />
+    <Content Include="Images\Covers\Thumbs\502.png" />
+    <Content Include="Images\Covers\Thumbs\503.png" />
+    <Content Include="Images\Covers\Thumbs\504.png" />
+    <Content Include="Images\Covers\Thumbs\505.png" />
+    <Content Include="Images\Covers\Thumbs\506.png" />
+    <Content Include="Images\Covers\Thumbs\601.png" />
+    <Content Include="Images\Covers\Thumbs\701.png" />
+    <Content Include="Images\Covers\Thumbs\702.png" />
+    <Content Include="Images\Covers\Thumbs\703.png" />
+    <Content Include="Images\Covers\Thumbs\704.png" />
+    <Content Include="Images\Covers\Thumbs\705.png" />
+    <Content Include="Images\Covers\Thumbs\706.png" />
+    <Content Include="Images\Covers\Thumbs\707.png" />
+    <Content Include="Images\Covers\Thumbs\708.png" />
+    <Content Include="Images\Covers\Thumbs\709.png" />
+    <Content Include="Images\Covers\Thumbs\710.png" />
+    <Content Include="Images\Covers\Thumbs\711.png" />
+    <Content Include="Images\Covers\Thumbs\801.png" />
+    <Content Include="Images\Covers\Thumbs\802.png" />
+    <Content Include="Images\Covers\Thumbs\803.png" />
+    <Content Include="Images\farhad.jpg" />
+    <Content Include="Images\favicon.png" />
+    <Content Include="Images\Flags\ad.png" />
+    <Content Include="Images\Flags\ae.png" />
+    <Content Include="Images\Flags\af.png" />
+    <Content Include="Images\Flags\ag.png" />
+    <Content Include="Images\Flags\al.png" />
+    <Content Include="Images\Flags\am.png" />
+    <Content Include="Images\Flags\ao.png" />
+    <Content Include="Images\Flags\ar.png" />
+    <Content Include="Images\Flags\at.png" />
+    <Content Include="Images\Flags\au.png" />
+    <Content Include="Images\Flags\az.png" />
+    <Content Include="Images\Flags\ba.png" />
+    <Content Include="Images\Flags\bb.png" />
+    <Content Include="Images\Flags\bd.png" />
+    <Content Include="Images\Flags\be.png" />
+    <Content Include="Images\Flags\bf.png" />
+    <Content Include="Images\Flags\bg.png" />
+    <Content Include="Images\Flags\bh.png" />
+    <Content Include="Images\Flags\bi.png" />
+    <Content Include="Images\Flags\bj.png" />
+    <Content Include="Images\Flags\bn.png" />
+    <Content Include="Images\Flags\bo.png" />
+    <Content Include="Images\Flags\br.png" />
+    <Content Include="Images\Flags\bs.png" />
+    <Content Include="Images\Flags\bt.png" />
+    <Content Include="Images\Flags\bw.png" />
+    <Content Include="Images\Flags\by.png" />
+    <Content Include="Images\Flags\bz.png" />
+    <Content Include="Images\Flags\ca.png" />
+    <Content Include="Images\Flags\cd.png" />
+    <Content Include="Images\Flags\cf.png" />
+    <Content Include="Images\Flags\cg.png" />
+    <Content Include="Images\Flags\ch.png" />
+    <Content Include="Images\Flags\ci.png" />
+    <Content Include="Images\Flags\cl.png" />
+    <Content Include="Images\Flags\cm.png" />
+    <Content Include="Images\Flags\cn.png" />
+    <Content Include="Images\Flags\co.png" />
+    <Content Include="Images\Flags\cr.png" />
+    <Content Include="Images\Flags\cu.png" />
+    <Content Include="Images\Flags\cv.png" />
+    <Content Include="Images\Flags\cy.png" />
+    <Content Include="Images\Flags\cz.png" />
+    <Content Include="Images\Flags\de.png" />
+    <Content Include="Images\Flags\dj.png" />
+    <Content Include="Images\Flags\dk.png" />
+    <Content Include="Images\Flags\dm.png" />
+    <Content Include="Images\Flags\do.png" />
+    <Content Include="Images\Flags\dz.png" />
+    <Content Include="Images\Flags\ec.png" />
+    <Content Include="Images\Flags\ee.png" />
+    <Content Include="Images\Flags\eg.png" />
+    <Content Include="Images\Flags\eh.png" />
+    <Content Include="Images\Flags\er.png" />
+    <Content Include="Images\Flags\es.png" />
+    <Content Include="Images\Flags\et.png" />
+    <Content Include="Images\Flags\FI.png" />
+    <Content Include="Images\Flags\fj.png" />
+    <Content Include="Images\Flags\fm.png" />
+    <Content Include="Images\Flags\fr.png" />
+    <Content Include="Images\Flags\ga.png" />
+    <Content Include="Images\Flags\gb.png" />
+    <Content Include="Images\Flags\gd.png" />
+    <Content Include="Images\Flags\ge.png" />
+    <Content Include="Images\Flags\gh.png" />
+    <Content Include="Images\Flags\gm.png" />
+    <Content Include="Images\Flags\gn.png" />
+    <Content Include="Images\Flags\gq.png" />
+    <Content Include="Images\Flags\gr.png" />
+    <Content Include="Images\Flags\gt.png" />
+    <Content Include="Images\Flags\gw.png" />
+    <Content Include="Images\Flags\gy.png" />
+    <Content Include="Images\Flags\hn.png" />
+    <Content Include="Images\Flags\hr.png" />
+    <Content Include="Images\Flags\ht.png" />
+    <Content Include="Images\Flags\hu.png" />
+    <Content Include="Images\Flags\id.png" />
+    <Content Include="Images\Flags\ie.png" />
+    <Content Include="Images\Flags\il.png" />
+    <Content Include="Images\Flags\in.png" />
+    <Content Include="Images\Flags\iq.png" />
+    <Content Include="Images\Flags\ir.png" />
+    <Content Include="Images\Flags\is.png" />
+    <Content Include="Images\Flags\it.png" />
+    <Content Include="Images\Flags\jm.png" />
+    <Content Include="Images\Flags\jo.png" />
+    <Content Include="Images\Flags\jp.png" />
+    <Content Include="Images\Flags\ke.png" />
+    <Content Include="Images\Flags\kg.png" />
+    <Content Include="Images\Flags\kh.png" />
+    <Content Include="Images\Flags\ki.png" />
+    <Content Include="Images\Flags\km.png" />
+    <Content Include="Images\Flags\kn.png" />
+    <Content Include="Images\Flags\kp.png" />
+    <Content Include="Images\Flags\kr.png" />
+    <Content Include="Images\Flags\ks.png" />
+    <Content Include="Images\Flags\kw.png" />
+    <Content Include="Images\Flags\kz.png" />
+    <Content Include="Images\Flags\la.png" />
+    <Content Include="Images\Flags\lb.png" />
+    <Content Include="Images\Flags\lc.png" />
+    <Content Include="Images\Flags\li.png" />
+    <Content Include="Images\Flags\lk.png" />
+    <Content Include="Images\Flags\lr.png" />
+    <Content Include="Images\Flags\ls.png" />
+    <Content Include="Images\Flags\lt.png" />
+    <Content Include="Images\Flags\lu.png" />
+    <Content Include="Images\Flags\lv.png" />
+    <Content Include="Images\Flags\ly.png" />
+    <Content Include="Images\Flags\ma.png" />
+    <Content Include="Images\Flags\mc.png" />
+    <Content Include="Images\Flags\md.png" />
+    <Content Include="Images\Flags\me.png" />
+    <Content Include="Images\Flags\mg.png" />
+    <Content Include="Images\Flags\mh.png" />
+    <Content Include="Images\Flags\mk.png" />
+    <Content Include="Images\Flags\ml.png" />
+    <Content Include="Images\Flags\mm.png" />
+    <Content Include="Images\Flags\mn.png" />
+    <Content Include="Images\Flags\mr.png" />
+    <Content Include="Images\Flags\mt.png" />
+    <Content Include="Images\Flags\mu.png" />
+    <Content Include="Images\Flags\mv.png" />
+    <Content Include="Images\Flags\mw.png" />
+    <Content Include="Images\Flags\mx.png" />
+    <Content Include="Images\Flags\my.png" />
+    <Content Include="Images\Flags\mz.png" />
+    <Content Include="Images\Flags\na.png" />
+    <Content Include="Images\Flags\ne.png" />
+    <Content Include="Images\Flags\ng.png" />
+    <Content Include="Images\Flags\ni.png" />
+    <Content Include="Images\Flags\nl.png" />
+    <Content Include="Images\Flags\no.png" />
+    <Content Include="Images\Flags\np.png" />
+    <Content Include="Images\Flags\nr.png" />
+    <Content Include="Images\Flags\nz.png" />
+    <Content Include="Images\Flags\om.png" />
+    <Content Include="Images\Flags\pa.png" />
+    <Content Include="Images\Flags\pe.png" />
+    <Content Include="Images\Flags\pg.png" />
+    <Content Include="Images\Flags\ph.png" />
+    <Content Include="Images\Flags\pk.png" />
+    <Content Include="Images\Flags\pl.png" />
+    <Content Include="Images\Flags\pt.png" />
+    <Content Include="Images\Flags\pw.png" />
+    <Content Include="Images\Flags\py.png" />
+    <Content Include="Images\Flags\qa.png" />
+    <Content Include="Images\Flags\ro.png" />
+    <Content Include="Images\Flags\rs.png" />
+    <Content Include="Images\Flags\ru.png" />
+    <Content Include="Images\Flags\rw.png" />
+    <Content Include="Images\Flags\sa.png" />
+    <Content Include="Images\Flags\sb.png" />
+    <Content Include="Images\Flags\sc.png" />
+    <Content Include="Images\Flags\sd.png" />
+    <Content Include="Images\Flags\se.png" />
+    <Content Include="Images\Flags\sg.png" />
+    <Content Include="Images\Flags\si.png" />
+    <Content Include="Images\Flags\sk.png" />
+    <Content Include="Images\Flags\sl.png" />
+    <Content Include="Images\Flags\sm.png" />
+    <Content Include="Images\Flags\sn.png" />
+    <Content Include="Images\Flags\so.png" />
+    <Content Include="Images\Flags\sr.png" />
+    <Content Include="Images\Flags\st.png" />
+    <Content Include="Images\Flags\sv.png" />
+    <Content Include="Images\Flags\sy.png" />
+    <Content Include="Images\Flags\sz.png" />
+    <Content Include="Images\Flags\td.png" />
+    <Content Include="Images\Flags\tg.png" />
+    <Content Include="Images\Flags\th.png" />
+    <Content Include="Images\Flags\tj.png" />
+    <Content Include="Images\Flags\tl.png" />
+    <Content Include="Images\Flags\tm.png" />
+    <Content Include="Images\Flags\tn.png" />
+    <Content Include="Images\Flags\to.png" />
+    <Content Include="Images\Flags\tr.png" />
+    <Content Include="Images\Flags\tt.png" />
+    <Content Include="Images\Flags\tv.png" />
+    <Content Include="Images\Flags\tw.png" />
+    <Content Include="Images\Flags\tz.png" />
+    <Content Include="Images\Flags\ua.png" />
+    <Content Include="Images\Flags\ug.png" />
+    <Content Include="Images\Flags\us.png" />
+    <Content Include="Images\Flags\uy.png" />
+    <Content Include="Images\Flags\uz.png" />
+    <Content Include="Images\Flags\va.png" />
+    <Content Include="Images\Flags\vc.png" />
+    <Content Include="Images\Flags\ve.png" />
+    <Content Include="Images\Flags\vn.png" />
+    <Content Include="Images\Flags\vu.png" />
+    <Content Include="Images\Flags\ws.png" />
+    <Content Include="Images\Flags\ye.png" />
+    <Content Include="Images\Flags\za.png" />
+    <Content Include="Images\Flags\zm.png" />
+    <Content Include="Images\Flags\zw.png" />
+    <Content Include="Images\GreenDecoration.png" />
+    <Content Include="Images\Icons\about32.png" />
+    <Content Include="Images\Icons\about48.png" />
+    <Content Include="Images\Icons\activity2.png" />
+    <Content Include="Images\Icons\activity3.png" />
+    <Content Include="Images\Icons\AddImage-32.png" />
+    <Content Include="Images\Icons\addmessage48.png" />
+    <Content Include="Images\Icons\arrow-grey.png" />
+    <Content Include="Images\Icons\arrow.png" />
+    <Content Include="Images\Icons\blog32.png" />
+    <Content Include="Images\Icons\Bug-32.png" />
+    <Content Include="Images\Icons\Calendar-32.png" />
+    <Content Include="Images\Icons\Contacts-32.png" />
+    <Content Include="Images\Icons\EllipseGrey.png" />
+    <Content Include="Images\Icons\EllipseOrange.png" />
+    <Content Include="Images\Icons\email_1.png" />
+    <Content Include="Images\Icons\ERROR_icon.png" />
+    <Content Include="Images\Icons\error.png" />
+    <Content Include="Images\Icons\Facebook-32.png" />
+    <Content Include="Images\Icons\facebook48.png" />
+    <Content Include="Images\Icons\fb.png" />
+    <Content Include="Images\Icons\forward48.png" />
+    <Content Include="Images\Icons\Gender-32.png" />
+    <Content Include="Images\Icons\Gender.png" />
+    <Content Include="Images\Icons\group48.png" />
+    <Content Include="Images\Icons\halfstar48.png" />
+    <Content Include="Images\Icons\ic_action_accounts.png" />
+    <Content Include="Images\Icons\ic_action_accounts_white.png" />
+    <Content Include="Images\Icons\ic_action_bad.png" />
+    <Content Include="Images\Icons\ic_action_chat.png" />
+    <Content Include="Images\Icons\ic_action_error.png" />
+    <Content Include="Images\Icons\ic_action_favorite.png" />
+    <Content Include="Images\Icons\ic_action_good.png" />
+    <Content Include="Images\Icons\ic_action_go_to_today.png" />
+    <Content Include="Images\Icons\ic_action_group.png" />
+    <Content Include="Images\Icons\ic_action_new_picture.png" />
+    <Content Include="Images\Icons\ic_action_person.png" />
+    <Content Include="Images\Icons\ic_action_place.png" />
+    <Content Include="Images\Icons\ic_action_search.png" />
+    <Content Include="Images\Icons\ic_action_secure.png" />
+    <Content Include="Images\Icons\ic_action_share.png" />
+    <Content Include="Images\Icons\ic_action_time.png" />
+    <Content Include="Images\Icons\activity5.png" />
+    <Content Include="Images\Icons\activity8.png" />
+    <Content Include="Images\Icons\activity4.png" />
+    <Content Include="Images\Icons\activity6.png" />
+    <Content Include="Images\Icons\activity7.png" />
+    <Content Include="Images\Icons\activity1.png" />
+    <Content Include="Images\Icons\Key-32.png" />
+    <Content Include="Images\Icons\Location-32.png" />
+    <Content Include="Images\Icons\login_fb.png" />
+    <Content Include="Images\Icons\messagebox_warning.png" />
+    <Content Include="Images\Icons\Next-32.png" />
+    <Content Include="Images\Icons\notifications\1-24.png" />
+    <Content Include="Images\Icons\notifications\10-24.png" />
+    <Content Include="Images\Icons\notifications\11-24.png" />
+    <Content Include="Images\Icons\notifications\12-24.png" />
+    <Content Include="Images\Icons\notifications\13-24.png" />
+    <Content Include="Images\Icons\notifications\14-24.png" />
+    <Content Include="Images\Icons\notifications\2-24.png" />
+    <Content Include="Images\Icons\notifications\3-24.png" />
+    <Content Include="Images\Icons\notifications\4-24.png" />
+    <Content Include="Images\Icons\notifications\5-24.png" />
+    <Content Include="Images\Icons\notifications\6-24.png" />
+    <Content Include="Images\Icons\notifications\7-24.png" />
+    <Content Include="Images\Icons\notifications\8-24.png" />
+    <Content Include="Images\Icons\notifications\9-24.png" />
+    <Content Include="Images\Icons\OK_icon.png" />
+    <Content Include="Images\Icons\pen32.png" />
+    <Content Include="Images\Icons\pen48.png" />
+    <Content Include="Images\Icons\pin48.png" />
+    <Content Include="Images\Icons\plus48.png" />
+    <Content Include="Images\Icons\Profile-32.png" />
+    <Content Include="Images\Icons\selected.png" />
+    <Content Include="Images\Icons\twitter.png" />
+    <Content Include="Images\Icons\voteup48.png" />
+    <Content Include="Images\Intro\intro1.png" />
+    <Content Include="Images\Intro\intro2.png" />
+    <Content Include="Images\Intro\intro3.png" />
+    <Content Include="Images\Intro\intro4.png" />
+    <Content Include="Images\Intro\intro5.png" />
+    <Content Include="Images\mehrad.jpg" />
+    <Content Include="Images\menuIcon.gif" />
+    <Content Include="Images\menuLogoRight.png" />
+    <Content Include="Images\Icons\calendar.png" />
+    <Content Include="Images\Icons\email.png" />
+    <Content Include="Images\Icons\events.png" />
+    <Content Include="Images\Icons\feed.png" />
+    <Content Include="Images\Icons\newEvent.png" />
+    <Content Include="Images\Icons\panelExplore.png" />
+    <Content Include="Images\Icons\person.png" />
+    <Content Include="Images\Icons\search.png" />
+    <Content Include="Images\Icons\settings.png" />
+    <Content Include="Images\Icons\turnoff.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\Menu\about32.png" />
+    <Content Include="Images\Menu\add232.png" />
+    <Content Include="Images\Menu\add32.png" />
+    <Content Include="Images\Menu\blog32.png" />
+    <Content Include="Images\Menu\circlelogo.png" />
+    <Content Include="Images\Menu\evvents32.png" />
+    <Content Include="Images\Menu\explore32.png" />
+    <Content Include="Images\Menu\feedback32.png" />
+    <Content Include="Images\Menu\following32.png" />
+    <Content Include="Images\Menu\invite32.png" />
+    <Content Include="Images\Menu\logout32.png" />
+    <Content Include="Images\Menu\messages32.png" />
+    <Content Include="Images\Menu\nearby32.png" />
+    <Content Include="Images\Menu\notifications32.png" />
+    <Content Include="Images\Menu\requests32.png" />
+    <Content Include="Images\Menu\reviews32.png" />
+    <Content Include="Images\Menu\search32.png" />
+    <Content Include="Images\Menu\settings32.png" />
+    <Content Include="Images\music-crowd-01.jpg" />
+    <Content Include="Images\newEvent.gif" />
+    <Content Include="Images\newEvent.png" />
+    <Content Include="Images\nophoto.gif" />
+    <Content Include="Images\nophoto.png" />
+    <Content Include="Images\Pins\type1.png" />
+    <Content Include="Images\Pins\type2.png" />
+    <Content Include="Images\Pins\type3.png" />
+    <Content Include="Images\Pins\type4.png" />
+    <Content Include="Images\Pins\type5.png" />
+    <Content Include="Images\Pins\type6.png" />
+    <Content Include="Images\Pins\type7.png" />
+    <Content Include="Images\Pins\type8.png" />
+    <Content Include="Images\sample.png" />
+    <Content Include="Images\verified.gif" />
+    <Content Include="Images\verifiedFalse.gif" />
+    <Content Include="Images\verifiedFalse.png" />
+    <Content Include="Images\verifiedTrue.gif" />
+    <Content Include="Images\verifiedTrue.png" />
+    <Content Include="index.html" />
+    <Content Include="Introduction.aspx" />
+    <Content Include="Invite.aspx" />
+    <Content Include="JS\jquery-ui.min.js" />
+    <Content Include="JS\jquery.cookie.js" />
+    <Content Include="JS\script.js" />
+    <Content Include="Libraries\ImageManager.dll" />
+    <Content Include="Logout.aspx" />
+    <Content Include="Maintenance.html" />
+    <Content Include="MasterPageUser.Master" />
+    <Content Include="Nearby.aspx" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\citycrowd.pubxml" />
+    <None Include="Properties\PublishProfiles\Test.pubxml" />
+    <Content Include="Images\verified.png" />
+    <Content Include="Remained.aspx" />
+    <Content Include="Report.aspx" />
+    <Content Include="RequestsShow.aspx" />
+    <Content Include="Review.aspx" />
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Styles\font-awesome-4.2.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Styles\font-awesome-4.2.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Styles\font-awesome-4.2.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Styles\font-awesome-4.2.0\fonts\FontAwesome.otf" />
+    <Content Include="Styles\font-awesome-4.2.0\less\bordered-pulled.less" />
+    <Content Include="Styles\font-awesome-4.2.0\less\core.less" />
+    <Content Include="Styles\font-awesome-4.2.0\less\fixed-width.less" />
+    <Content Include="Styles\font-awesome-4.2.0\less\font-awesome.less" />
+    <Content Include="Styles\font-awesome-4.2.0\less\icons.less" />
+    <Content Include="Styles\font-awesome-4.2.0\less\larger.less" />
+    <Content Include="Styles\font-awesome-4.2.0\less\list.less" />
+    <Content Include="Styles\font-awesome-4.2.0\less\mixins.less" />
+    <Content Include="Styles\font-awesome-4.2.0\less\path.less" />
+    <Content Include="Styles\font-awesome-4.2.0\less\rotated-flipped.less" />
+    <Content Include="Styles\font-awesome-4.2.0\less\spinning.less" />
+    <Content Include="Styles\font-awesome-4.2.0\less\stacked.less" />
+    <Content Include="Styles\font-awesome-4.2.0\less\variables.less" />
+    <Content Include="Styles\font-awesome-4.2.0\scss\font-awesome.scss" />
+    <Content Include="Styles\font-awesome-4.2.0\scss\_bordered-pulled.scss" />
+    <Content Include="Styles\font-awesome-4.2.0\scss\_core.scss" />
+    <Content Include="Styles\font-awesome-4.2.0\scss\_fixed-width.scss" />
+    <Content Include="Styles\font-awesome-4.2.0\scss\_icons.scss" />
+    <Content Include="Styles\font-awesome-4.2.0\scss\_larger.scss" />
+    <Content Include="Styles\font-awesome-4.2.0\scss\_list.scss" />
+    <Content Include="Styles\font-awesome-4.2.0\scss\_mixins.scss" />
+    <Content Include="Styles\font-awesome-4.2.0\scss\_path.scss" />
+    <Content Include="Styles\font-awesome-4.2.0\scss\_rotated-flipped.scss" />
+    <Content Include="Styles\font-awesome-4.2.0\scss\_spinning.scss" />
+    <Content Include="Styles\font-awesome-4.2.0\scss\_stacked.scss" />
+    <Content Include="Styles\font-awesome-4.2.0\scss\_variables.scss" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Login.aspx" />
+    <Content Include="Messages.aspx" />
+    <Content Include="MessagesShow.aspx" />
+    <Content Include="Notifications.aspx" />
+    <Content Include="Profile.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Requests.aspx" />
+    <Content Include="Search.aspx" />
+    <Content Include="Settings.aspx" />
+    <Content Include="Styles\font-awesome-4.2.0\css\font-awesome.css" />
+    <Content Include="Styles\font-awesome-4.2.0\css\font-awesome.min.css" />
+    <Content Include="Styles\font-awesome-4.2.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Styles\jquery-ui.min.css" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Styles\themes\images\ajax-loader.gif" />
+    <Content Include="Styles\themes\images\icons-png\action-black.png" />
+    <Content Include="Styles\themes\images\icons-png\action-white.png" />
+    <Content Include="Styles\themes\images\icons-png\alert-black.png" />
+    <Content Include="Styles\themes\images\icons-png\alert-white.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-d-black.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-d-l-black.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-d-l-white.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-d-r-black.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-d-r-white.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-d-white.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-l-black.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-l-white.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-r-black.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-r-white.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-u-black.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-u-l-black.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-u-l-white.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-u-r-black.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-u-r-white.png" />
+    <Content Include="Styles\themes\images\icons-png\arrow-u-white.png" />
+    <Content Include="Styles\themes\images\icons-png\audio-black.png" />
+    <Content Include="Styles\themes\images\icons-png\audio-white.png" />
+    <Content Include="Styles\themes\images\icons-png\back-black.png" />
+    <Content Include="Styles\themes\images\icons-png\back-white.png" />
+    <Content Include="Styles\themes\images\icons-png\bars-black.png" />
+    <Content Include="Styles\themes\images\icons-png\bars-white.png" />
+    <Content Include="Styles\themes\images\icons-png\bullets-black.png" />
+    <Content Include="Styles\themes\images\icons-png\bullets-white.png" />
+    <Content Include="Styles\themes\images\icons-png\calendar-black.png" />
+    <Content Include="Styles\themes\images\icons-png\calendar-white.png" />
+    <Content Include="Styles\themes\images\icons-png\camera-black.png" />
+    <Content Include="Styles\themes\images\icons-png\camera-white.png" />
+    <Content Include="Styles\themes\images\icons-png\carat-d-black.png" />
+    <Content Include="Styles\themes\images\icons-png\carat-d-white.png" />
+    <Content Include="Styles\themes\images\icons-png\carat-l-black.png" />
+    <Content Include="Styles\themes\images\icons-png\carat-l-white.png" />
+    <Content Include="Styles\themes\images\icons-png\carat-r-black.png" />
+    <Content Include="Styles\themes\images\icons-png\carat-r-white.png" />
+    <Content Include="Styles\themes\images\icons-png\carat-u-black.png" />
+    <Content Include="Styles\themes\images\icons-png\carat-u-white.png" />
+    <Content Include="Styles\themes\images\icons-png\check-black.png" />
+    <Content Include="Styles\themes\images\icons-png\check-white.png" />
+    <Content Include="Styles\themes\images\icons-png\clock-black.png" />
+    <Content Include="Styles\themes\images\icons-png\clock-white.png" />
+    <Content Include="Styles\themes\images\icons-png\cloud-black.png" />
+    <Content Include="Styles\themes\images\icons-png\cloud-white.png" />
+    <Content Include="Styles\themes\images\icons-png\comment-black.png" />
+    <Content Include="Styles\themes\images\icons-png\comment-white.png" />
+    <Content Include="Styles\themes\images\icons-png\delete-black.png" />
+    <Content Include="Styles\themes\images\icons-png\delete-white.png" />
+    <Content Include="Styles\themes\images\icons-png\edit-black.png" />
+    <Content Include="Styles\themes\images\icons-png\edit-white.png" />
+    <Content Include="Styles\themes\images\icons-png\eye-black.png" />
+    <Content Include="Styles\themes\images\icons-png\eye-white.png" />
+    <Content Include="Styles\themes\images\icons-png\forbidden-black.png" />
+    <Content Include="Styles\themes\images\icons-png\forbidden-white.png" />
+    <Content Include="Styles\themes\images\icons-png\forward-black.png" />
+    <Content Include="Styles\themes\images\icons-png\forward-white.png" />
+    <Content Include="Styles\themes\images\icons-png\gear-black.png" />
+    <Content Include="Styles\themes\images\icons-png\gear-white.png" />
+    <Content Include="Styles\themes\images\icons-png\grid-black.png" />
+    <Content Include="Styles\themes\images\icons-png\grid-white.png" />
+    <Content Include="Styles\themes\images\icons-png\heart-black.png" />
+    <Content Include="Styles\themes\images\icons-png\heart-white.png" />
+    <Content Include="Styles\themes\images\icons-png\home-black.png" />
+    <Content Include="Styles\themes\images\icons-png\home-white.png" />
+    <Content Include="Styles\themes\images\icons-png\info-black.png" />
+    <Content Include="Styles\themes\images\icons-png\info-white.png" />
+    <Content Include="Styles\themes\images\icons-png\location-black.png" />
+    <Content Include="Styles\themes\images\icons-png\location-white.png" />
+    <Content Include="Styles\themes\images\icons-png\lock-black.png" />
+    <Content Include="Styles\themes\images\icons-png\lock-white.png" />
+    <Content Include="Styles\themes\images\icons-png\mail-black.png" />
+    <Content Include="Styles\themes\images\icons-png\mail-white.png" />
+    <Content Include="Styles\themes\images\icons-png\minus-black.png" />
+    <Content Include="Styles\themes\images\icons-png\minus-white.png" />
+    <Content Include="Styles\themes\images\icons-png\navigation-black.png" />
+    <Content Include="Styles\themes\images\icons-png\navigation-white.png" />
+    <Content Include="Styles\themes\images\icons-png\phone-black.png" />
+    <Content Include="Styles\themes\images\icons-png\phone-white.png" />
+    <Content Include="Styles\themes\images\icons-png\plus-black.png" />
+    <Content Include="Styles\themes\images\icons-png\plus-white.png" />
+    <Content Include="Styles\themes\images\icons-png\power-black.png" />
+    <Content Include="Styles\themes\images\icons-png\power-white.png" />
+    <Content Include="Styles\themes\images\icons-png\recycle-black.png" />
+    <Content Include="Styles\themes\images\icons-png\recycle-white.png" />
+    <Content Include="Styles\themes\images\icons-png\refresh-black.png" />
+    <Content Include="Styles\themes\images\icons-png\refresh-white.png" />
+    <Content Include="Styles\themes\images\icons-png\search-black.png" />
+    <Content Include="Styles\themes\images\icons-png\search-white.png" />
+    <Content Include="Styles\themes\images\icons-png\shop-black.png" />
+    <Content Include="Styles\themes\images\icons-png\shop-white.png" />
+    <Content Include="Styles\themes\images\icons-png\star-black.png" />
+    <Content Include="Styles\themes\images\icons-png\star-white.png" />
+    <Content Include="Styles\themes\images\icons-png\tag-black.png" />
+    <Content Include="Styles\themes\images\icons-png\tag-white.png" />
+    <Content Include="Styles\themes\images\icons-png\user-black.png" />
+    <Content Include="Styles\themes\images\icons-png\user-white.png" />
+    <Content Include="Styles\themes\images\icons-png\video-black.png" />
+    <Content Include="Styles\themes\images\icons-png\video-white.png" />
+    <Content Include="Styles\themes\jquery.mobile.icons.min.css" />
+    <Content Include="Styles\themes\moody.css" />
+    <Content Include="Styles\themes\moody.min.css" />
+    <Content Include="Verify.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\Admins.ascx.cs">
+      <DependentUpon>Admins.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\Admins.ascx.designer.cs">
+      <DependentUpon>Admins.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\Blog.ascx.cs">
+      <DependentUpon>Blog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\Blog.ascx.designer.cs">
+      <DependentUpon>Blog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\Events.ascx.cs">
+      <DependentUpon>Events.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\Events.ascx.designer.cs">
+      <DependentUpon>Events.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\Feedback.ascx.cs">
+      <DependentUpon>Feedback.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\Feedback.ascx.designer.cs">
+      <DependentUpon>Feedback.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\Locations.ascx.cs">
+      <DependentUpon>Locations.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\Locations.ascx.designer.cs">
+      <DependentUpon>Locations.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\Settings.ascx.cs">
+      <DependentUpon>Settings.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\Settings.ascx.designer.cs">
+      <DependentUpon>Settings.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\Statistics.ascx.cs">
+      <DependentUpon>Statistics.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\Statistics.ascx.designer.cs">
+      <DependentUpon>Statistics.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\Support.ascx.cs">
+      <DependentUpon>Support.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\Support.ascx.designer.cs">
+      <DependentUpon>Support.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\Users.ascx.cs">
+      <DependentUpon>Users.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\Users.ascx.designer.cs">
+      <DependentUpon>Users.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Blog.aspx.cs">
+      <DependentUpon>Blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog.aspx.designer.cs">
+      <DependentUpon>Blog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BlogEntries.aspx.cs">
+      <DependentUpon>BlogEntries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BlogEntries.aspx.designer.cs">
+      <DependentUpon>BlogEntries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChatHub.cs" />
+    <Compile Include="Classes\Admins.cs" />
+    <Compile Include="Classes\Blog.cs" />
+    <Compile Include="Classes\Connections.cs" />
+    <Compile Include="Classes\Date.cs" />
+    <Compile Include="Classes\Done.cs" />
+    <Compile Include="Classes\Events.cs" />
+    <Compile Include="Classes\Explore.cs" />
+    <Compile Include="Classes\Feedback.cs" />
+    <Compile Include="Classes\ForgotPassword.cs" />
+    <Compile Include="Classes\Invite.cs" />
+    <Compile Include="Classes\Locations.cs" />
+    <Compile Include="Classes\LoginSession.cs" />
+    <Compile Include="Classes\Mail.cs" />
+    <Compile Include="Classes\Messages.cs" />
+    <Compile Include="Classes\Nearby.cs" />
+    <Compile Include="Classes\Notifications.cs" />
+    <Compile Include="Classes\Report.cs" />
+    <Compile Include="Classes\Requests.cs" />
+    <Compile Include="Classes\Reviews.cs" />
+    <Compile Include="Classes\Search.cs" />
+    <Compile Include="Classes\Signal.cs" />
+    <Compile Include="Classes\SiteSettings.cs" />
+    <Compile Include="Classes\UserActions.cs" />
+    <Compile Include="Classes\UserInfo.cs" />
+    <Compile Include="Classes\UserProfileSet.cs" />
+    <Compile Include="Completion.aspx.cs">
+      <DependentUpon>Completion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Completion.aspx.designer.cs">
+      <DependentUpon>Completion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Done.aspx.cs">
+      <DependentUpon>Done.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Done.aspx.designer.cs">
+      <DependentUpon>Done.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventsAdd.aspx.cs">
+      <DependentUpon>EventsAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventsAdd.aspx.designer.cs">
+      <DependentUpon>EventsAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventsModify.aspx.cs">
+      <DependentUpon>EventsModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventsModify.aspx.designer.cs">
+      <DependentUpon>EventsModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventsView.aspx.cs">
+      <DependentUpon>EventsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventsView.aspx.designer.cs">
+      <DependentUpon>EventsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Explore.aspx.cs">
+      <DependentUpon>Explore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Explore.aspx.designer.cs">
+      <DependentUpon>Explore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="facebooksync.aspx.cs">
+      <DependentUpon>facebooksync.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="facebooksync.aspx.designer.cs">
+      <DependentUpon>facebooksync.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FbFollow.aspx.cs">
+      <DependentUpon>FbFollow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FbFollow.aspx.designer.cs">
+      <DependentUpon>FbFollow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Following.aspx.cs">
+      <DependentUpon>Following.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Following.aspx.designer.cs">
+      <DependentUpon>Following.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Help.aspx.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help.aspx.designer.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Introduction.aspx.cs">
+      <DependentUpon>Introduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Introduction.aspx.designer.cs">
+      <DependentUpon>Introduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Invite.aspx.cs">
+      <DependentUpon>Invite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invite.aspx.designer.cs">
+      <DependentUpon>Invite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageUser.Master.cs">
+      <DependentUpon>MasterPageUser.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageUser.Master.designer.cs">
+      <DependentUpon>MasterPageUser.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Messages.aspx.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messages.aspx.designer.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MessagesShow.aspx.cs">
+      <DependentUpon>MessagesShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MessagesShow.aspx.designer.cs">
+      <DependentUpon>MessagesShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nearby.aspx.cs">
+      <DependentUpon>Nearby.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nearby.aspx.designer.cs">
+      <DependentUpon>Nearby.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications.aspx.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notifications.aspx.designer.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remained.aspx.cs">
+      <DependentUpon>Remained.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Remained.aspx.designer.cs">
+      <DependentUpon>Remained.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Requests.aspx.cs">
+      <DependentUpon>Requests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Requests.aspx.designer.cs">
+      <DependentUpon>Requests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RequestsShow.aspx.cs">
+      <DependentUpon>RequestsShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RequestsShow.aspx.designer.cs">
+      <DependentUpon>RequestsShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Review.aspx.cs">
+      <DependentUpon>Review.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Review.aspx.designer.cs">
+      <DependentUpon>Review.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="Verify.aspx.cs">
+      <DependentUpon>Verify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Verify.aspx.designer.cs">
+      <DependentUpon>Verify.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Types\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6752</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:6752/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
